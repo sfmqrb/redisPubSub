@@ -12,11 +12,11 @@ red = redis.StrictRedis('localhost',
 
 def publish_notif(data: dict):
     n = red.publish(f'{data["channel"]}', "wake_up")
-    print(n)
+    print("num of subscribers: ", n)
 
 while True:
     data = get_data()
     json_object = json.dumps(data, indent=4)
     red.lpush(f'{data["channel"]}', json_object)
     publish_notif(data)
-    time.sleep(1 + random())
+    time.sleep(1 - random())
