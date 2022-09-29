@@ -47,11 +47,16 @@ func getLengthList(rds *redis.Client, key string) int64 {
 }
 
 func getRedis() *redis.Client {
-	return redis.NewClient(&redis.Options{
-		Addr:     "localhost:6379",
+	redisdb := redis.NewClient(&redis.Options{
+		Addr:     "localhost:7979",
 		Password: "",
 		DB:       0,
 	})
+	_, err := redisdb.Ping().Result()
+	if err != nil {
+		fmt.Println("error: ", err)
+	}
+	return redisdb
 }
 
 func getPubSub(client *redis.Client) *redis.PubSub {
