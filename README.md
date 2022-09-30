@@ -15,3 +15,19 @@ In this application I use redis Pub/Sub to notify Subs that there is actually so
 So instead of spinning around the LIST we use this mechanism to avoid polling.
 
 [more info about push-based redis pub/sub](https://blog.devgenius.io/how-to-use-redis-pub-sub-in-your-python-application-b6d5e11fc8de)
+
+## run
+
+```bash
+python3 publisher.py
+```
+
+
+```bash
+go run subscriber.go
+```
+
+make sure redis-server is running on default port.
+
+## todo
+dockerize project
