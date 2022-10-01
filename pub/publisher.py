@@ -5,7 +5,7 @@ import redis
 from data import get_data
 
 red = redis.StrictRedis('localhost',
-                        6379,
+                        7979,
                         charset="utf-8",
                         decode_responses=True)
 
