@@ -29,5 +29,10 @@ go run subscriber.go
 
 make sure redis-server is running on default port.
 
-## todo
-use docker-compose
+
+## Using Docker
+
+```bash
+docker-compose build
+docker-compose up
+```
