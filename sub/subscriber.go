@@ -10,7 +10,7 @@ import (
 
 func main() {
 	for {
-		time.Sleep(time.Second)
+		time.Sleep(time.Second * 2) 
 		go func() {
 			id := rand.Int()
 			c := int(rand.Float32()*5) + 1
@@ -48,7 +48,7 @@ func getLengthList(rds *redis.Client, key string) int64 {
 
 func getRedis() *redis.Client {
 	redisdb := redis.NewClient(&redis.Options{
-		Addr:     "localhost:7979",
+		Addr:     "redis:6379",
 		Password: "",
 		DB:       0,
 	})

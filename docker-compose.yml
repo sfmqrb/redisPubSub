@@ -1,0 +1,12 @@
+version: "3.8"
+services: 
+  redis:
+    image: redis
+  pub:
+    build: ./pub
+    depends_on:
+      - redis
+  sub:
+    build: ./sub
+    depends_on:
+      - pub 

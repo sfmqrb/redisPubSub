@@ -7,7 +7,6 @@ def get_data():
     five = int(random() * 5 // 1) + 1
     return {
         "current_time": time.time(),
-        "user": os.getlogin(),
         "pid": os.getpid(),
         "ppid": os.getppid(),
         "channel": five # five channels to push
